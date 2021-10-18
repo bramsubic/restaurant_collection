@@ -1,0 +1,29 @@
+:root {
+    --main-color: #d02d00;
+    --second-color: #ffffff;
+}
+
+body {
+    color: var(--main-color);
+    background-color: (var(--second-color));
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2, h3 {
+   font-size: 6.5px; 
+    margin: 0;
+}
+
+a {
+   color: var(--main-color); 
+   text-decoration: underline;
+}
+main {
+  flex: 1 0 auto;
+}
