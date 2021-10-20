@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Please create a restaurant</h1>
+
+<form method="POST" action="/restaurants/submit/">
+    {% csrf_token %}
+    <label for="restaurant_name">Please enter a name:</label>
+    <input name="name" required id="restaurant_name">
+    
+    <label for="restaurant_neighbourhood">Neighbourhood:</label>
+    <input name="neighbourhood" id="restaurant_neighbourhood">
+    
+    <label for="restaurant_cost">Cost:</label>
+    <input name="cost" id="restaurant_cost">
+
+    <label for="restaurant_cuisine">Cuisine:</label>
+    <input name="cuisine" id="restaurant_cuisine">
+
+    <label for="restaurant_suggestion">Suggestion:</label>
+    <input name="suggestion" id="restaurant_suggestion">
+    <button type="submit">Submit</button>
+</form>
+
+
+{% endblock %}

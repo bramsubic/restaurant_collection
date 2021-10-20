@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Edit the restaurant:</h1>
+
+<form method="POST" action="/restaurants/{{ restaurant.id }}/update/">
+    {% csrf_token %}
+    <label for="restaurant_name">Please enter a name:</label>
+    <input name="name" value="{{ restaurant.name }}" required id="restaurant_name" >
+    
+    <label for="restaurant_neighbourhood">Neighbourhood</label>
+    <input name="neighbourhood" value={{restaurant.neighbourhood}} id="restaurant_neighbourhood">
+    
+    <label for="resaurant_cost">Cost:</label>
+    <input name="cost" value="{{restaurant.cost }}" id="restaurant_cost">
+
+    <label for="restaurant_cuisine">Cuisine:</label>
+    <input name="cuisine" value="{{restaurant.cuisine}}" id="restaurant_cuisine">
+
+    <label for="restaurant_suggestion">Suggestion:</label>
+    <input name="suggestion" value="{{restaurant.suggestion}}" id="restaurant_suggestion">
+   
+    <button type="submit">Submit</button>
+</form>
+
+
+{% endblock %}

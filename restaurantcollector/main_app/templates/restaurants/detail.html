@@ -9,6 +9,11 @@
       <p>Cuisine: {{ restaurant.cuisine }}</p>
        <p>Suggestion: {{ restaurant.suggestion }}</p>
     </div>
+
+      <div class="card-action">
+    <a href="{% url 'restaurants_edit' restaurant.id %}">Edit</a>
+    <a href="{% url 'restaurants_delete' restaurant.id %}">Delete</a>
+        </div>
   </div>
 
 {% endblock %}

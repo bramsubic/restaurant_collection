@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Restaurant List</h1>
-
-{% for restaurant in restaurants %}
-  <div class="card">
-    <a href="{% url 'detail' restaurant.id %}">
-    <div class="card-content">
-      <span class="card-title">{{ restaurant.name }}</span>
-      <p>Neighbourhood: {{ restaurant.neighbourhood }}</p>
-      <p>Cost: {{ restaurant.cost }}</p>
-      <p>Cuisine: {{ restaurant.cuisine }}</p>
-       <p>Suggestion: {{ restaurant.suggestion }}</p>
-    </div>
-    </a>
-  </div>
-{% endfor %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Neighbourhood</th>
+        <th>Cost</th>
+        <th>Cuisine</th>
+        <th>Suggestion</th>
+    </tr>
+    <tr>
+        {% for restaurant in restaurants %}
+        <th><a href="{% url 'detail' restaurant.id %}">
+            <p>{{ restaurant.name }}</p></a></th>
+        <th><p>{{ restaurant.neighbourhood }}</p></th>
+        <th><p>{{ restaurant.cost }}</p></th>
+      <th><p>{{ restaurant.cuisine }}</p></th>
+       <th><p>{{ restaurant.suggestion }}</p></th> 
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
